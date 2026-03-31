@@ -1,8 +1,18 @@
+using System.IO;
+
 namespace knightmoves;
 
-public class FileManager{
+public class FileManager
+{
+    public void Create(string fileName)
+    {
+        string directory = Path.GetDirectoryName(fileName);
 
-    public void Create(string fileName){
-        System.IO.File.WriteAllText(fileName, "hello file");
+        if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory))
+        {
+            Directory.CreateDirectory(directory);
+        }
+
+        File.WriteAllText(fileName, "hello file");
     }
 }
