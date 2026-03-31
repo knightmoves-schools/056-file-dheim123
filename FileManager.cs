@@ -7,8 +7,7 @@ public class FileManager
     public void Create(string fileName)
     {
         string directory = Path.GetDirectoryName(fileName);
-
-        if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory))
+        if (!string.IsNullOrEmpty(directory))
         {
             Directory.CreateDirectory(directory);
         }
